@@ -1,5 +1,5 @@
 # Set running path
-setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/step3_analysis_BCCCDC/01_Coexpression_Trend_Node_Degree")
+setwd("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/step3_analysis_BCCCDC/01_Coexpression_Trend_Node_Degree/")
 ########################################################################################################
 # 一、Here we draw box plots and VENN plots for the degrees of nodes in the rising and falling network #
 ########################################################################################################
@@ -14,8 +14,8 @@ setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/step3_analysis_BCCCDC/01_
 ######################
 # Import degree data #
 ###############################################################################################################################
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/restrain_Degree.RData")#
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/advance_Degree.RData") #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/restrain_Degree.RData")#
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/advance_Degree.RData") #
 ###############################################################################################################################
 
 
@@ -25,7 +25,7 @@ load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/01_Coexpres
 # Draw a box plot #
 #############################################################################################################################################################################
 # Set the storage path of the box map                                                                                                                                       #
-png(file="/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/0102_Up_Down_Degree_Figure/boxplot/advance_restrain_Degree.png") #
+png(file="/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/0102_Up_Down_Degree_Figure/boxplot/advance_restrain_Degree.png") #
 attach(mtcars)                                                                                                                                                              #
 opar<-par(no.readonly=T)                                                                                                                                                    #
 par(mfrow=c(1,2))                                                                                                                                                           #
@@ -53,7 +53,7 @@ dev.off()                                                                       
 # Draw VENN diagram #
 ###########################################################################################################################################
 # Set VENN map storage path                                                                                                               #
-setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/0102_Up_Down_Degree_Figure/VENN") #
+setwd("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/0102_Up_Down_Degree_Figure/VENN/") #
 library("VennDiagram")                                                                                                                    #
 file_name <- c("COAD.png","KIRC.png","LUAD.png","THCA.png")                                                                               #
 main_name <- c("COAD","KIRC","LUAD","THCA")                                                                                               #

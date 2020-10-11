@@ -113,8 +113,10 @@ data_path_model = subgraphs_max_model_edges_v_new
 out_path_pic_heatmap_model = path_main_out + "heatmap_%s_%s_cor_by_p.png"  # dataname trend
 draw_plot.run_heatmap(data_path_model, out_path_pic_heatmap_model)
 
-# # need to have output the spearmon without fold in step1
-# data_path_p_model = path_main_input + "%s/%s_%d_p_%s.pkl"  # dataname 0-5 fold/unfold
-# data_path_cor_model = path_main_input + "%s/%s_%d_cor_%s.pkl"  # dataname 0-5 fold/unfold
-# out_path_pic_model = path_main_out + "boxplot_%s_cor_by_p.png"  # dataname fold/unfold
-# draw_plot.run_boxplot()
+# need to have output the spearmon without fold in step1
+data_path_p_model = path_main_input + "%s/%s_%d_p_%s.pkl"  # dataname 0-5 fold/unfold
+data_path_cor_model = path_main_input + "%s/%s_%d_cor_%s.pkl"  # dataname 0-5 fold/unfold
+out_path_pic_model = path_main_out + "boxplot_%s_cor_by_p.png"  # dataname fold/unfold
+draw_plot.run_boxplot(data_path_p_model, data_path_cor_model, out_path_pic_model)
+
+print("\n\n\nover.")

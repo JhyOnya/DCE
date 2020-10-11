@@ -1,5 +1,5 @@
 # Set running path
-setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/step3_analysis_BCCCDC/04_Wilconxon_Differential_Coexpression/")
+setwd("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/step3_analysis_BCCCDC/04_Wilconxon_Differential_Coexpression/")
 #####################################################################################################################################################
 #####################################################################################################################################################
 ############# 四、Here we de-intersect the genes in the differentially expressed genes in the largest connection subgraph ###########################
@@ -13,13 +13,13 @@ setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/step3_analysis_BCCCDC/04_
 # Import the data of differentially expressed genes and the largest connected subgraph #
 #############################################################################################################################################
 # Introduce differentially expressed genes                                                                                                  #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_2to3/RData/COAD_wilconxon.RData")                                        #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_2to3/RData/KIRC_wilconxon.RData")                                        #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_2to3/RData/LUAD_wilconxon.RData")                                        #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_2to3/RData/THCA_wilconxon.RData")                                        #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_2to3/RData/COAD_wilconxon.RData")                                      #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_2to3/RData/KIRC_wilconxon.RData")                                      #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_2to3/RData/LUAD_wilconxon.RData")                                      #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_2to3/RData/THCA_wilconxon.RData")                                      #
 # Max_subgraphs                                                                                                                             #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_2to3/RData/nonboth_subgraph_nodes_neg.RData")                            #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_2to3/RData/nonboth_subgraph_nodes_pos.RData")                            #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_2to3/RData/nonboth_subgraph_nodes_neg.RData")                          #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_2to3/RData/nonboth_subgraph_nodes_pos.RData")                          #
 #############################################################################################################################################
 
 
@@ -52,10 +52,10 @@ names(KIRC_wilconxon_MaxSub_intersect) <- c("pos","neg")                        
 names(LUAD_wilconxon_MaxSub_intersect) <- c("pos","neg")                                                                                                                                  #
 names(THCA_wilconxon_MaxSub_intersect) <- c("pos","neg")                                                                                                                                  #
 #
-save(COAD_wilconxon_MaxSub_intersect,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/COAD_wilconxon_MaxSub_intersect.RData")#
-save(KIRC_wilconxon_MaxSub_intersect,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/KIRC_wilconxon_MaxSub_intersect.RData")#
-save(LUAD_wilconxon_MaxSub_intersect,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/LUAD_wilconxon_MaxSub_intersect.RData")#
-save(THCA_wilconxon_MaxSub_intersect,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/THCA_wilconxon_MaxSub_intersect.RData")#
+save(COAD_wilconxon_MaxSub_intersect,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/COAD_wilconxon_MaxSub_intersect.RData")#
+save(KIRC_wilconxon_MaxSub_intersect,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/KIRC_wilconxon_MaxSub_intersect.RData")#
+save(LUAD_wilconxon_MaxSub_intersect,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/LUAD_wilconxon_MaxSub_intersect.RData")#
+save(THCA_wilconxon_MaxSub_intersect,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/THCA_wilconxon_MaxSub_intersect.RData")#
 ###########################################################################################################################################################################################
 
 
@@ -65,7 +65,7 @@ save(THCA_wilconxon_MaxSub_intersect,file = "/home/jhy/code/myCode/Python/other/
 # Here we draw the VENN graph of differentially expressed genes and the largest connected subgraph  #
 ##################################################################################################################################
 # Set VENN map storage path                                                                                                      #
-setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/")                  #
+setwd("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/")                  #
 #
 library("VennDiagram")                                                                                                           #
 #
@@ -125,10 +125,10 @@ venn.plot <- venn.diagram(list("wilconxon"=unlist(THCA_wilconxon[[2]]),
 # Find the intersection                                                                                                                                                                   #
 ####################                                                                                                                                                                      #
 # Top100                                                                                                                                                                                  #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/COAD_Centricity_Top100.RData")                                  #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/KIRC_Centricity_Top100.RData")                                  #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/LUAD_Centricity_Top100.RData")                                  #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/THCA_Centricity_Top100.RData")                                  #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/COAD_Centricity_Top100.RData")                           #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/KIRC_Centricity_Top100.RData")                                  #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/LUAD_Centricity_Top100.RData")                                  #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/THCA_Centricity_Top100.RData")                                  #
 ##################################################                                                                                                                                        #
 COAD_wilconxon_Top100_intersect <- list()                                                                                                                                                 #
 KIRC_wilconxon_Top100_intersect <- list()                                                                                                                                                 #
@@ -152,14 +152,14 @@ names(KIRC_wilconxon_Top100_intersect) <- c("pos","neg")                        
 names(LUAD_wilconxon_Top100_intersect) <- c("pos","neg")                                                                                                                                  #
 names(THCA_wilconxon_Top100_intersect) <- c("pos","neg")                                                                                                                                  #
 #                                                                                                                                                                                         #
-save(COAD_wilconxon_Top100_intersect,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/COAD_wilconxon_Top100_intersect.RData")#
-save(KIRC_wilconxon_Top100_intersect,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/KIRC_wilconxon_Top100_intersect.RData")#
-save(LUAD_wilconxon_Top100_intersect,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/LUAD_wilconxon_Top100_intersect.RData")#
-save(THCA_wilconxon_Top100_intersect,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/THCA_wilconxon_Top100_intersect.RData")#
+save(COAD_wilconxon_Top100_intersect,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/COAD_wilconxon_Top100_intersect.RData")#
+save(KIRC_wilconxon_Top100_intersect,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/KIRC_wilconxon_Top100_intersect.RData")#
+save(LUAD_wilconxon_Top100_intersect,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/LUAD_wilconxon_Top100_intersect.RData")#
+save(THCA_wilconxon_Top100_intersect,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/THCA_wilconxon_Top100_intersect.RData")#
 ####################                                                                                                                                                                       #
 # 
 ####################                                                                                                                                                                       #
-setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/VENN/")                                                                  #
+setwd("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/VENN/")                                                                  #
 library("VennDiagram")                                                                                                                                                                     #
 ########## COAD ##########
 venn.plot <- venn.diagram(list("wilconxon"=unlist(COAD_wilconxon[[1]]), 
@@ -215,10 +215,10 @@ venn.plot <- venn.diagram(list("wilconxon"=unlist(THCA_wilconxon[[2]]),
 # 05-01、Find the intersection                                                                                                                                                          #
 ####################                                                                                                                                                                    #
 # Top50                                                                                                                                                                                 #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/COAD_Centricity_Top50.RData")                                 #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/KIRC_Centricity_Top50.RData")                                 #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/LUAD_Centricity_Top50.RData")                                 #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/THCA_Centricity_Top50.RData")                                 #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/COAD_Centricity_Top50.RData")                                 #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/KIRC_Centricity_Top50.RData")                                 #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/LUAD_Centricity_Top50.RData")                                 #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/THCA_Centricity_Top50.RData")                                 #
 ##################################################                                                                                                                                      #
 COAD_wilconxon_Top50_intersect <- list()                                                                                                                                                #                                                                                                                                               #
 KIRC_wilconxon_Top50_intersect <- list()                                                                                                                                                #
@@ -242,14 +242,14 @@ names(KIRC_wilconxon_Top50_intersect) <- c("pos","neg")                         
 names(LUAD_wilconxon_Top50_intersect) <- c("pos","neg")                                                                                                                                 #
 names(THCA_wilconxon_Top50_intersect) <- c("pos","neg")                                                                                                                                 #
 #                                                                                                                                                                                       #
-save(COAD_wilconxon_Top50_intersect,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/COAD_wilconxon_Top50_intersect.RData")#
-save(KIRC_wilconxon_Top50_intersect,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/KIRC_wilconxon_Top50_intersect.RData")#
-save(LUAD_wilconxon_Top50_intersect,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/LUAD_wilconxon_Top50_intersect.RData")#
-save(THCA_wilconxon_Top50_intersect,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/THCA_wilconxon_Top50_intersect.RData")#
+save(COAD_wilconxon_Top50_intersect,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/COAD_wilconxon_Top50_intersect.RData")#
+save(KIRC_wilconxon_Top50_intersect,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/KIRC_wilconxon_Top50_intersect.RData")#
+save(LUAD_wilconxon_Top50_intersect,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/LUAD_wilconxon_Top50_intersect.RData")#
+save(THCA_wilconxon_Top50_intersect,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/THCA_wilconxon_Top50_intersect.RData")#
 ####################                                                                                                                                                                    #
 #
 ####################                                                                                                                                                                    #
-setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/VENN/")                                                               #
+setwd("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/VENN/")                                                               #
 library("VennDiagram")                                                                                                                                                                  #
 ########## COAD ##########
 venn.plot <- venn.diagram(list("wilconxon"=unlist(COAD_wilconxon[[1]]), 
@@ -304,10 +304,10 @@ venn.plot <- venn.diagram(list("wilconxon"=unlist(THCA_wilconxon[[2]]),
 # 04-01、Find the intersection                                                                                                                                                          #
 ####################                                                                                                                                                                    #
 # Top20                                                                                                                                                                                 #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/COAD_Centricity_Top20.RData")                                 #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/KIRC_Centricity_Top20.RData")                                 #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/LUAD_Centricity_Top20.RData")                                 #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/THCA_Centricity_Top20.RData")                                 #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/COAD_Centricity_Top20.RData")                                 #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/KIRC_Centricity_Top20.RData")                                 #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/LUAD_Centricity_Top20.RData")                                 #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/THCA_Centricity_Top20.RData")                                 #
 ##################################################                                                                                                                                      #
 COAD_wilconxon_Top20_intersect <- list()                                                                                                                                                #
 KIRC_wilconxon_Top20_intersect <- list()                                                                                                                                                #
@@ -331,14 +331,14 @@ names(KIRC_wilconxon_Top20_intersect) <- c("pos","neg")                         
 names(LUAD_wilconxon_Top20_intersect) <- c("pos","neg")                                                                                                                                 #
 names(THCA_wilconxon_Top20_intersect) <- c("pos","neg")                                                                                                                                 #
 #                                                                                                                                                                                       #
-save(COAD_wilconxon_Top20_intersect,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/COAD_wilconxon_Top20_intersect.RData")#
-save(KIRC_wilconxon_Top20_intersect,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/KIRC_wilconxon_Top20_intersect.RData")#
-save(LUAD_wilconxon_Top20_intersect,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/LUAD_wilconxon_Top20_intersect.RData")#
-save(THCA_wilconxon_Top20_intersect,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/THCA_wilconxon_Top20_intersect.RData")#
+save(COAD_wilconxon_Top20_intersect,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/COAD_wilconxon_Top20_intersect.RData")#
+save(KIRC_wilconxon_Top20_intersect,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/KIRC_wilconxon_Top20_intersect.RData")#
+save(LUAD_wilconxon_Top20_intersect,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/LUAD_wilconxon_Top20_intersect.RData")#
+save(THCA_wilconxon_Top20_intersect,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/THCA_wilconxon_Top20_intersect.RData")#
 ####################                                                                                                                                                                    #
 #
 ####################                                                                                                                                                                    #
-setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/VENN/")                                                               #
+setwd("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/VENN/")                                                               #
 library("VennDiagram")                                                                                                                                                                  #
 ########## COAD ##########
 venn.plot <- venn.diagram(list("wilconxon"=unlist(COAD_wilconxon[[1]]), 

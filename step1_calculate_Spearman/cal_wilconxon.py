@@ -52,7 +52,7 @@ def get_wilcox():
         simi_pd["up_down_" + str(i)] = simi[:, 0]
         simi_pd["p_value_" + str(i)] = simi[:, 1]
         simi_pd["trend"] = simi_pd["trend"] + simi_pd["up_down_" + str(i)]
-    print(simi_pd)
+
     wil_pos_pd = simi_pd.loc[(simi_pd['trend'] >= 2) & (simi_pd['up_down_0'] == 1),]
     wil_neg_pd = simi_pd.loc[(simi_pd['trend'] <= -2) & (simi_pd['up_down_0'] == -1),]
     wil_pos_pd['trend_each'] = 0

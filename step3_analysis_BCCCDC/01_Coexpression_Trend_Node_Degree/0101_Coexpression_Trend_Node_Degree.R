@@ -10,15 +10,15 @@
 #################################################################################################################################
 
 # Set running path
-setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/step3_analysis_BCCCDC/01_Coexpression_Trend_Node_Degree/")
+setwd("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/step3_analysis_BCCCDC/01_Coexpression_Trend_Node_Degree/")
 
 ######
 # 01 #
 #########################################
 # Import the rising and falling network #
 ########################################################################################################
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_2to3/RData/edges_trend4_pos.RData") #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_2to3/RData/edges_trend4_neg.RData") #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_2to3/RData/edges_trend4_pos.RData") #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_2to3/RData/edges_trend4_neg.RData") #
 ########################################################################################################
 
 ######
@@ -42,6 +42,6 @@ names(advance_Degree) <- c("COAD","KIRC","LUAD","THCA")                         
 names(restrain_Degree) <- c("COAD","KIRC","LUAD","THCA")                                                                                                                          #
 # 02-04                                                                                                                                                                           #
 # Store a list of node degrees for storage                                                                                                                                        #
-save(restrain_Degree,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/restrain_Degree.RData")                             #
-save(advance_Degree,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/advance_Degree.RData")                               #
+save(restrain_Degree,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/restrain_Degree.RData")                            #
+save(advance_Degree,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/advance_Degree.RData")                              #
 ###################################################################################################################################################################################

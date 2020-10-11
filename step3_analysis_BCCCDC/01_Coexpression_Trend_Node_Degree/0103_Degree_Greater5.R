@@ -1,5 +1,5 @@
 # set runing path
-setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/step3_analysis_BCCCDC/01_Coexpression_Trend_Node_Degree")
+setwd("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/step3_analysis_BCCCDC/01_Coexpression_Trend_Node_Degree/")
 ################################################################################################################################
 ## 一、Here we find the nodes that meet our conditions according to the degree of each node in the rising and falling network ##
 ################################################################################################################################
@@ -16,8 +16,8 @@ setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/step3_analysis_BCCCDC/01_
 ##############################################################################
 # Import data on the degree of nodes in the ascending and descending network #
 ###############################################################################################################################
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/restrain_Degree.RData")#
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/advance_Degree.RData") #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/restrain_Degree.RData")#
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/advance_Degree.RData") #
 ###############################################################################################################################
 
 
@@ -80,8 +80,8 @@ names(Node1) <- c("COAD","KIRC","LUAD","THCA")                                  
 names(Node2) <- c("COAD","KIRC","LUAD","THCA")                                                                                                         #
 names(Node3) <- c("COAD","KIRC","LUAD","THCA")                                                                                                         #
 names(Node4) <- c("COAD","KIRC","LUAD","THCA")                                                                                                         #
-save(Node1,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/0103_Degree_Greater5/Node1.RData") #
-save(Node2,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/0103_Degree_Greater5/Node2.RData") #
-save(Node3,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/0103_Degree_Greater5/Node3.RData") #
-save(Node4,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/0103_Degree_Greater5/Node4.RData") #
+save(Node1,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/0103_Degree_Greater5/Node1.RData")#
+save(Node2,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/0103_Degree_Greater5/Node2.RData")#
+save(Node3,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/0103_Degree_Greater5/Node3.RData")#
+save(Node4,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/0103_Degree_Greater5/Node4.RData")#
 ########################################################################################################################################################

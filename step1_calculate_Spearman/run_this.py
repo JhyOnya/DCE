@@ -52,9 +52,9 @@ def runAll():
     printT("3 delete pvalue larger than", args.remain_p_value)
     calculate.del_non_value()
 
-    # if want to compare co-expression with expression value
-    printT("cal wilcox")
-    cal_wilconxon.get_wilcox()
+    # # if want to compare co-expression with expression value
+    # printT("cal wilcox")
+    # cal_wilconxon.get_wilcox()
 
     printT("over.")
 

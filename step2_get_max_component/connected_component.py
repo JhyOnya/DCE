@@ -5,6 +5,8 @@ import multiprocessing
 
 import functools
 
+from utils import printT
+
 
 def cmp(list1, list2):
     return len(list2) - len(list1)
@@ -32,7 +34,7 @@ def cal_out_subgraph(connect_graph, data_name, index, trend_data_pre, subgraphs_
         subgraphs.append(pre_index.tolist())
         added_index.extend(pre_index)
 
-    print(data_name, trend_pre, "subgraph count:", len(subgraphs))
+    printT(data_name, trend_pre, "subgraph count:", len(subgraphs))
 
     subgraphs.sort(key=functools.cmp_to_key(cmp))
 
@@ -44,8 +46,8 @@ def cal_out_subgraph(connect_graph, data_name, index, trend_data_pre, subgraphs_
     submax_pd.to_csv(subgraph_nodelist_model_new % (data_name, trend_pre), header=None, index=False)
 
     subnet = trend_data_pre[trend_data_pre['Node_A'].isin(subgraphs[0]) & trend_data_pre['Node_B'].isin(subgraphs[0])]
-    print(data_name, trend_pre, "subnet nodes count", len(subgraphs[0]))
-    print(data_name, trend_pre, "subnet edges count", subnet.shape[0])
+    printT(data_name, trend_pre, "subnet nodes count", len(subgraphs[0]))
+    printT(data_name, trend_pre, "subnet edges count", subnet.shape[0])
     subnet[['Node_A', 'Node_B']].to_csv(subgraphs_max_edges_model % (trend_pre, data_name), index=False, sep="\t")
 
     subnet.to_csv(subgraphs_max_model_edges_v_new % (trend_pre, data_name), index=False)

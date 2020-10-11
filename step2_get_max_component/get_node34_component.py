@@ -1,5 +1,6 @@
 import pandas as pd
 from collections import Counter
+from utils import printT
 
 
 def run(namelist, path_model, path_model_new, node2_model):
@@ -19,11 +20,11 @@ def run(namelist, path_model, path_model_new, node2_model):
             node_count_pre = pd.DataFrame(list(result.most_common()), columns=['Node', trend + '_num'])
             node_count_pre.set_index(["Node"], inplace=True)
 
-            print(name, trend, "edges", data.shape[0], "->", "nodes", node_count_pre.shape[0])
+            printT(name, trend, "edges", data.shape[0], "->", "nodes", node_count_pre.shape[0])
             node_count_s.append(node_count_pre)
             datas.append(data)
         node_count_df = node_count_s[0].join(node_count_s[1], how='outer')
-        print(name, "all node count", node_count_df.shape)
+        printT(name, "all node count", node_count_df.shape)
 
         node_count_df = node_count_df.fillna(0)
         c1 = node_count_df[(node_count_df[trendlist[0] + '_num'] != 0) & (node_count_df[trendlist[1] + '_num'] != 0)]
@@ -45,7 +46,7 @@ def run(namelist, path_model, path_model_new, node2_model):
         # get new network node34
         for data, trend_pre, c34, pre_c in zip(datas, trendlist, [c3_pos, c3_neg], ["C3'", "C4'"]):
             data_new = data[data['Node_A'].isin(c34.index) & data['Node_B'].isin(c34.index)]
-            print(trend_pre, name, "C34 count", data_new.shape[0])
+            printT(trend_pre, name, "C34 count", data_new.shape[0])
             df_result.at[name, pre_c] = data_new.shape[0]
             data_new.to_csv(path_model_new % (trend_pre, name), index=False)
 

@@ -1,17 +1,9 @@
-####################################################################################################
-############################ 一、这里我们对Node2、3、4中的节点进行富集分析 #########################
-####################################################################################################
-
 
 ######
 # 01 #
-#########################################################
-# 导入前期需要的数据：                                  #
-# 1、gene_symbol_list.txt：基因列表                     #
-# 2、all_pathway_canonica_GO_bp_unify.1.RData：通路数据 #
 ############################################################################################################################################################
-Gene_List <- read.table("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_2to3/RData/gene_symbol_list.txt",sep = "\t",stringsAsFactors = FALSE)#
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_2to3/RData/all_pathway_canonica_GO_bp_unify.1.RData")                                   #
+Gene_List <- read.table("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_2to3/RData/gene_symbol_list.txt",sep = "\t",stringsAsFactors = FALSE)#
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_2to3/RData/all_pathway_canonica_GO_bp_unify.1.RData")                                   #
 ############################################################################################################################################################
 
 
@@ -53,9 +45,9 @@ Enrichment <- function(datafile){                                               
 ###########################
 # Import Node2, 3, 4 data #
 ############################################################################################################################################
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/0103_Degree_Greater5/Node2.RData")  #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/0103_Degree_Greater5/Node3.RData")  #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/0103_Degree_Greater5/Node4.RData")  #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/0103_Degree_Greater5/Node2.RData")  #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/0103_Degree_Greater5/Node3.RData")  #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/0103_Degree_Greater5/Node4.RData")  #
 ############################################################################################################################################
 
 
@@ -126,7 +118,7 @@ for (j in 1:4) {                                                  #
 names(Node2_GO) <- names(Node2)                                                                                                                              #
 names(Node3_GO) <- names(Node2)                                                                                                                              #
 names(Node4_GO) <- names(Node2)                                                                                                                              #
-save(Node2_GO,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/0103_Node2_3_4_GO/Node2_GO.RData")    #
-save(Node3_GO,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/0103_Node2_3_4_GO/Node3_GO.RData")    #
-save(Node4_GO,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/0103_Node2_3_4_GO/Node4_GO.RData")    #
+save(Node2_GO,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/0103_Node2_3_4_GO/Node2_GO.RData")   #
+save(Node3_GO,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/0103_Node2_3_4_GO/Node3_GO.RData")   #
+save(Node4_GO,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/01_Coexpression_Trend_Node_Degree/0103_Node2_3_4_GO/Node4_GO.RData")   #
 ##############################################################################################################################################################

@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 from collections import Counter
 
+from utils import printT
+
 
 def run(namelist, path_model, sub_model, stat_model):
     df_stat = pd.DataFrame(None, columns=namelist)
@@ -12,18 +14,18 @@ def run(namelist, path_model, sub_model, stat_model):
     for name in namelist:
         index_maxsub_s = []
         index_secsub_s = []
-        print()
-        print(name)
+        printT()
+        printT(name)
         for trend in trendlist:
             subgraph_path = sub_model % (trend, name)
-            print(subgraph_path, end=" ")
+            printT(subgraph_path, end=" ")
             with open(subgraph_path, 'r') as f:
                 lines = f.readlines()
                 points_list = lines[0].split(', ')
                 points_list2 = lines[1].split(', ')
             points_list = [pre.replace("'", "").strip() for pre in points_list]
             points_list2 = [pre.replace("'", "").strip() for pre in points_list2]
-            print(len(points_list))
+            printT(len(points_list))
             index_maxsub_s.append(points_list)
             index_secsub_s.append(points_list2)
             df_stat.at['sub_' + trend + '_points', name] = len(list(set(points_list)))
@@ -36,16 +38,16 @@ def run(namelist, path_model, sub_model, stat_model):
             df_stat.at['all_' + trend + '_edges', name] = data.shape[0]
             df_stat.at['all_' + trend + '_points', name] = len(
                 list(set(data['Node_A'].tolist() + data['Node_B'].tolist())))
-            print(data.shape, end="->")
+            printT(data.shape, end="->")
 
             data_sec = data[data['Node_A'].isin(index_secsub_s[i])]
             data_sec = data_sec[data_sec['Node_B'].isin(index_secsub_s[i])]
-            print(data_sec.shape)
+            printT(data_sec.shape)
             df_stat.at['sec_' + trend + '_edges', name] = data_sec.shape[0]
 
             data = data[data['Node_A'].isin(index_maxsub_s[i])]
             data = data[data['Node_B'].isin(index_maxsub_s[i])]
-            print(data.shape, data_path)
+            printT(data.shape, data_path)
             df_stat.at['sub_' + trend + '_edges', name] = data.shape[0]
 
             index = data['Node_A'].tolist() + data['Node_B'].tolist()
@@ -54,10 +56,10 @@ def run(namelist, path_model, sub_model, stat_model):
             node_count_pre = pd.DataFrame(list(result.most_common()), columns=['Node', trend + '_num'])
             node_count_pre.set_index(["Node"], inplace=True)
 
-            print(i, "node count", node_count_pre.shape)
+            printT(i, "node count", node_count_pre.shape)
             node_count_s.append(node_count_pre)
         node_count_df = node_count_s[0].join(node_count_s[1], how='outer')
-        print("all node count", node_count_df.shape)
+        printT("all node count", node_count_df.shape)
 
         node_count_df = node_count_df.fillna(0)
         c1 = node_count_df[(node_count_df[trendlist[0] + '_num'] != 0) & (node_count_df[trendlist[1] + '_num'] != 0)]

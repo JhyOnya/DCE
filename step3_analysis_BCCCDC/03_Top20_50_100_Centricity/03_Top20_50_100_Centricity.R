@@ -1,5 +1,5 @@
 # Set running path
-setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/step3_analysis_BCCCDC/03_Top20_50_100_Centricity")
+setwd("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/step3_analysis_BCCCDC/03_Top20_50_100_Centricity/")
 ################################################################################################################################################
 ################################################################################################################################################
 ######## 三、Here we perform the following operations on the three neutrals of the nodes in the largest connected subgraph of each cancer ######
@@ -22,8 +22,8 @@ library("VennDiagram")
 # 1-01：COAD Top100 #
 #######################################################################################################################################################################################
 # Import the three centrality data corresponding to the rise and fall of COAD                                                                                                         #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/COAD_Centricity_neg.RData")                                                              #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/COAD_Centricity_pos.RData")                                                              #                                                                                                                                                             #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/COAD_Centricity_neg.RData")                                                              #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/COAD_Centricity_pos.RData")
 # Create a list of the intersection of the top 100 nodes of the three centralities                                                                                                    #
 COAD_Centricity_Top100 <- list()                                                                                                                                                      #
 # Take out the top 100 nodes of the three centralities in the descending network respectively                                                                                         #
@@ -33,7 +33,7 @@ a3 <- names(sort(COAD_Centricity_neg[[3]],decreasing = TRUE)[c(1:100)])         
 # Find the intersection of the first 100 nodes of the three centralities in the descending network；                                                                                  #
 COAD_Centricity_Top100[[1]] <- intersect(intersect(a1,a2),a3)                                                                                                                         #
 # Set the path to store VENN diagram；                                                                                                                                                #
-setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/02_VENN/COAD/")                                                                      #
+setwd("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/02_VENN/COAD/")                                                                      #
 # Plot the VENN graph of the intersection of the top 100 nodes of the three centralities in the descending network;                                                                   #
 venn.plot <- venn.diagram(list("DC"=a1, 
                                "CC"=a2,
@@ -55,7 +55,7 @@ venn.plot <- venn.diagram(list("DC"=a1,
                           fill = rainbow(3),main = "COAD_Advance_Top100")                                                                                                             #
 # Name and store the list that stores the intersection；                                                                                                                              #
 names(COAD_Centricity_Top100) <- c("neg","pos")                                                                                                                                       #
-save(COAD_Centricity_Top100,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/COAD_Centricity_Top100.RData")#
+save(COAD_Centricity_Top100,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/COAD_Centricity_Top100.RData")#
 #######################################################################################################################################################################################
 ######
 # 01 #
@@ -71,7 +71,7 @@ a3 <- names(sort(COAD_Centricity_neg[[3]],decreasing = TRUE)[c(1:50)])          
 # Find the intersection of the first 50 nodes of the three centralities in the descending network                                                                                     #
 COAD_Centricity_Top50[[1]] <- intersect(intersect(a1,a2),a3)                                                                                                                          #
 # Set the path to store VENN diagram；                                                                                                                                                #
-setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/02_VENN/COAD/")                                                                      #
+setwd("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/02_VENN/COAD/")                                                                      #
 # 绘制下降网络中三种中心性的前50节点的交集的VENN图;                                                                                                                                   #
 venn.plot <- venn.diagram(list("DC"=a1, 
                                "CC"=a2,
@@ -93,7 +93,7 @@ venn.plot <- venn.diagram(list("DC"=a1,
                           fill = rainbow(3),main = "COAD_Advance_Top50")                                                                                                              #
 # Name and store the list that stores the intersection                                                                                                                                #
 names(COAD_Centricity_Top50) <- c("neg","pos")                                                                                                                                        #
-save(COAD_Centricity_Top50,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/COAD_Centricity_Top50.RData")  #
+save(COAD_Centricity_Top50,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/COAD_Centricity_Top50.RData")  #
 #######################################################################################################################################################################################
 ######
 # 01 #
@@ -109,7 +109,7 @@ a3 <- names(sort(COAD_Centricity_neg[[3]],decreasing = TRUE)[c(1:20)])          
 # Find the intersection of the first 20 nodes of the three centralities in the descending network                                                                                     #
 COAD_Centricity_Top20[[1]] <- intersect(intersect(a1,a2),a3)                                                                                                                          #
 # Set the path to store VENN diagram                                                                                                                                                  #
-setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/02_VENN/COAD/")                                                                      #
+setwd("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/02_VENN/COAD/")                                                                      #
 # Draw the VENN graph of the intersection of the first 20 nodes of the three centralities in the descending networ                                                                    #
 venn.plot <- venn.diagram(list("DC"=a1, 
                                "CC"=a2,
@@ -131,7 +131,7 @@ venn.plot <- venn.diagram(list("DC"=a1,
                           fill = rainbow(3),main = "COAD_Advance_Top20")                                                                                                              #
 # Name and store the list that stores the intersection；                                                                                                                              #
 names(COAD_Centricity_Top20) <- c("neg","pos")                                                                                                                                        #
-save(COAD_Centricity_Top20,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/COAD_Centricity_Top20.RData")  #
+save(COAD_Centricity_Top20,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/COAD_Centricity_Top20.RData")  #
 #######################################################################################################################################################################################
 
 
@@ -143,8 +143,8 @@ save(COAD_Centricity_Top20,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM20
 # 02-01：KIRC Top100 #
 #######################################################################################################################################################################################
 # 导入KIRC对应的上升和下降的三种中心性的数据                                                                                                                                          #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/KIRC_Centricity_neg.RData")                                                              #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/KIRC_Centricity_pos.RData")                                                              #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/KIRC_Centricity_neg.RData")                                                              #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/KIRC_Centricity_pos.RData")                                                              #
 # 02-01：KIRC Top100                                                                                                                                                                  #
 # 02-01-01：创建存放三种中心性前100节点交集的列表；                                                                                                                                   #
 KIRC_Centricity_Top100 <- list()                                                                                                                                                      #
@@ -155,7 +155,7 @@ a3 <- names(sort(KIRC_Centricity_neg[[3]],decreasing = TRUE)[c(1:100)])         
 # 求下降网络中三种中心性的前100节点的交集；                                                                                                                                           #
 KIRC_Centricity_Top100[[1]] <- intersect(intersect(a1,a2),a3)                                                                                                                         #
 # 设置存放 VENN 图的路径；                                                                                                                                                            #
-setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/02_VENN/KIRC/")                                                                      #
+setwd("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/02_VENN/KIRC/")                                                                      #
 # Plot the VENN graph of the intersection of the top 100 nodes of the three centralities in the descending network                                                                    #
 venn.plot <- venn.diagram(list("DC"=a1, 
                                "CC"=a2,
@@ -177,7 +177,7 @@ venn.plot <- venn.diagram(list("DC"=a1,
                           fill = rainbow(3),main = "KIRC_Advance_Top100")                                                                                                             #
 # Name and store the list that stores the intersection                                                                                                                                #
 names(KIRC_Centricity_Top100) <- c("neg","pos")                                                                                                                                       #
-save(KIRC_Centricity_Top100,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/KIRC_Centricity_Top100.RData")#
+save(KIRC_Centricity_Top100,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/KIRC_Centricity_Top100.RData")#
 #######################################################################################################################################################################################
 ######
 # 02 #
@@ -193,7 +193,7 @@ a3 <- names(sort(KIRC_Centricity_neg[[3]],decreasing = TRUE)[c(1:50)])          
 # Find the intersection of the first 50 nodes of the three centralities in the descending network；                                                                                   #
 KIRC_Centricity_Top50[[1]] <- intersect(intersect(a1,a2),a3)                                                                                                                          #
 # Set the path to store VENN diagram；                                                                                                                                                #
-setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/02_VENN/KIRC/")                                                                      #
+setwd("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/02_VENN/KIRC/")                                                                      #
 # Plot the VENN graph of the intersection of the first 50 nodes of the three centralities in the descending network;                                                                  #
 venn.plot <- venn.diagram(list("DC"=a1, 
                                "CC"=a2,
@@ -215,7 +215,7 @@ venn.plot <- venn.diagram(list("DC"=a1,
                           fill = rainbow(3),main = "KIRC_Advance_Top50")                                                                                                              #
 # Name and store the list that stores the intersection；                                                                                                                              #
 names(KIRC_Centricity_Top50) <- c("neg","pos")                                                                                                                                        #
-save(KIRC_Centricity_Top50,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/KIRC_Centricity_Top50.RData")  #
+save(KIRC_Centricity_Top50,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/KIRC_Centricity_Top50.RData")  #
 #######################################################################################################################################################################################
 ######
 # 02 #
@@ -231,7 +231,7 @@ a3 <- names(sort(KIRC_Centricity_neg[[3]],decreasing = TRUE)[c(1:20)])          
 # Find the intersection of the first 20 nodes of the three centralities in the descending network；                                                                                   #
 KIRC_Centricity_Top20[[1]] <- intersect(intersect(a1,a2),a3)                                                                                                                          #
 # Set the path to store VENN diagram；                                                                                                                                                #
-setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/02_VENN/KIRC/")                                                                      #
+setwd("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/02_VENN/KIRC/")                                                                      #
 # Draw the VENN graph of the intersection of the first 20 nodes of the three centralities in the descending network;                                                                  #
 venn.plot <- venn.diagram(list("DC"=a1, 
                                "CC"=a2,
@@ -253,7 +253,7 @@ venn.plot <- venn.diagram(list("DC"=a1,
                           fill = rainbow(3),main = "KIRC_Advance_Top20")                                                                                                              #
 # Name and store the list that stores the intersection；                                                                                                                              #
 names(KIRC_Centricity_Top20) <- c("neg","pos")                                                                                                                                        #
-save(KIRC_Centricity_Top20,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/KIRC_Centricity_Top20.RData")  #
+save(KIRC_Centricity_Top20,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/KIRC_Centricity_Top20.RData")  #
 #######################################################################################################################################################################################
 
 
@@ -267,8 +267,8 @@ save(KIRC_Centricity_Top20,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM20
 # 03-01：LUAD Top100 #
 #######################################################################################################################################################################################
 # Import three kinds of centrality data corresponding to the rise and fall of LUAD                                                                                                    #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/LUAD_Centricity_neg.RData")                                                              #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/LUAD_Centricity_pos.RData")                                                              #                                                                                                                                                              #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/LUAD_Centricity_neg.RData")                                                              #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/LUAD_Centricity_pos.RData")                                                              #                                                                                                                                                              #
 # Create a list of the intersection of the top 100 nodes of the three centralities；                                                                                                  #
 LUAD_Centricity_Top100 <- list()                                                                                                                                                      #
 # Take out the top 100 nodes of the three centralities in the descending network respectively                                                                                         #
@@ -278,7 +278,7 @@ a3 <- names(sort(LUAD_Centricity_neg[[3]],decreasing = TRUE)[c(1:100)])         
 # Find the intersection of the first 100 nodes of the three centralities in the descending network；                                                                                  #
 LUAD_Centricity_Top100[[1]] <- intersect(intersect(a1,a2),a3)                                                                                                                         #
 # Set the path to store VENN diagram                                                                                                                                                  #
-setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/02_VENN/LUAD/")                                                                      #
+setwd("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/02_VENN/LUAD/")                                                                      #
 # Plot the VENN graph of the intersection of the top 100 nodes of the three centralities in the descending network                                                                    #
 venn.plot <- venn.diagram(list("DC"=a1, 
                                "CC"=a2,
@@ -300,7 +300,7 @@ venn.plot <- venn.diagram(list("DC"=a1,
                           fill = rainbow(3),main = "LUAD_Advance_Top100")                                                                                                             #
 # Name and store the list that stores the intersection                                                                                                                                #
 names(LUAD_Centricity_Top100) <- c("neg","pos")                                                                                                                                       #
-save(LUAD_Centricity_Top100,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/LUAD_Centricity_Top100.RData")#
+save(LUAD_Centricity_Top100,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/LUAD_Centricity_Top100.RData")#
 #######################################################################################################################################################################################
 ######
 # 03 #
@@ -316,7 +316,7 @@ a3 <- names(sort(LUAD_Centricity_neg[[3]],decreasing = TRUE)[c(1:50)])          
 # Find the intersection of the first 50 nodes of the three centralities in the descending network                                                                                     #
 LUAD_Centricity_Top50[[1]] <- intersect(intersect(a1,a2),a3)                                                                                                                          #
 # Set the path to store VENN diagram；                                                                                                                                                #
-setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/02_VENN/LUAD/")                                                                      #
+setwd("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/02_VENN/LUAD/")                                                                      #
 # Plot the VENN graph of the intersection of the first 50 nodes of the three centralities in the descending network                                                                   #
 venn.plot <- venn.diagram(list("DC"=a1, 
                                "CC"=a2,
@@ -338,7 +338,7 @@ venn.plot <- venn.diagram(list("DC"=a1,
                           fill = rainbow(3),main = "LUAD_Advance_Top50")                                                                                                               #
 # Name and store the list that stores the intersection                                                                                                                                 #
 names(LUAD_Centricity_Top50) <- c("neg","pos")                                                                                                                                         #
-save(LUAD_Centricity_Top50,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/LUAD_Centricity_Top50.RData")   #
+save(LUAD_Centricity_Top50,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/LUAD_Centricity_Top50.RData")   #
 ########################################################################################################################################################################################
 ######
 # 03 #
@@ -354,7 +354,7 @@ a3 <- names(sort(LUAD_Centricity_neg[[3]],decreasing = TRUE)[c(1:20)])          
 # Find the intersection of the first 20 nodes of the three centralities in the descending network                                                                                      #
 LUAD_Centricity_Top20[[1]] <- intersect(intersect(a1,a2),a3)                                                                                                                           #
 # Set the path to store VENN diagram；                                                                                                                                                 #
-setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/02_VENN/LUAD/")                                                                       #
+setwd("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/02_VENN/LUAD/")                                                                       #
 # Draw the VENN graph of the intersection of the first 20 nodes of the three centralities in the descending network                                                                    #
 venn.plot <- venn.diagram(list("DC"=a1, 
                                "CC"=a2,
@@ -376,7 +376,7 @@ venn.plot <- venn.diagram(list("DC"=a1,
                           fill = rainbow(3),main = "LUAD_Advance_Top20")                                                                                                               #
 # Name and store the list that stores the intersection                                                                                                                                 #
 names(LUAD_Centricity_Top20) <- c("neg","pos")                                                                                                                                         #
-save(LUAD_Centricity_Top20,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/LUAD_Centricity_Top20.RData")   #
+save(LUAD_Centricity_Top20,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/LUAD_Centricity_Top20.RData")   #
 #######################################################################################################################################################################################
 
 
@@ -386,8 +386,8 @@ save(LUAD_Centricity_Top20,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM20
 # 04-01：THCA Top100 #
 #######################################################################################################################################################################################
 # Import three kinds of central data corresponding to THCA's rise and fall                                                                                                             #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/THCA_Centricity_neg.RData")                                                               #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/THCA_Centricity_pos.RData")                                                               #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/THCA_Centricity_neg.RData")                                                               #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/THCA_Centricity_pos.RData")                                                               #
 # Create a list of the intersection of the top 100 nodes of the three centralities                                                                                                     #
 THCA_Centricity_Top100 <- list()                                                                                                                                                       #
 # Take out the top 100 nodes of the three centralities in the descending network respectively                                                                                          #
@@ -397,7 +397,7 @@ a3 <- names(sort(THCA_Centricity_neg[[3]],decreasing = TRUE)[c(1:100)])         
 # Find the intersection of the top 100 nodes of the three centralities in the descending network;                                                                                      #
 THCA_Centricity_Top100[[1]] <- intersect(intersect(a1,a2),a3)                                                                                                                          #
 # Set the path to store VENN diagram                                                                                                                                                   #
-setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/02_VENN/THCA/")                                                                       #
+setwd("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/02_VENN/THCA/")                                                                       #
 # Plot the VENN graph of the intersection of the top 100 nodes of the three centralities in the descending network                                                                     #
 venn.plot <- venn.diagram(list("DC"=a1, 
                                "CC"=a2,
@@ -419,7 +419,7 @@ venn.plot <- venn.diagram(list("DC"=a1,
                           fill = rainbow(3),main = "THCA_Advance_Top100")                                                                                                              #
 # Name and store the list that stores the intersection                                                                                                                                 #
 names(THCA_Centricity_Top100) <- c("neg","pos")                                                                                                                                        #
-save(THCA_Centricity_Top100,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/THCA_Centricity_Top100.RData") #
+save(THCA_Centricity_Top100,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/THCA_Centricity_Top100.RData") #
 ########################################################################################################################################################################################
 ######
 # 04 #
@@ -435,7 +435,7 @@ a3 <- names(sort(THCA_Centricity_neg[[3]],decreasing = TRUE)[c(1:50)])          
 #  Find the intersection of the first 50 nodes of the three centralities in the descending network                                                                                     #
 THCA_Centricity_Top50[[1]] <- intersect(intersect(a1,a2),a3)                                                                                                                           #
 # Set the path to store VENN diagram                                                                                                                                                   #
-setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/02_VENN/THCA/")                                                                       #
+setwd("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/02_VENN/THCA/")                                                                       #
 # Plot the VENN graph of the intersection of the first 50 nodes of the three centralities in the descending network                                                                    #
 venn.plot <- venn.diagram(list("DC"=a1, 
                                "CC"=a2,
@@ -457,7 +457,7 @@ venn.plot <- venn.diagram(list("DC"=a1,
                           fill = rainbow(3),main = "THCA_Advance_Top50")                                                                                                               #
 # Name and store the list that stores the intersection                                                                                                                                 #
 names(THCA_Centricity_Top50) <- c("neg","pos")                                                                                                                                         #
-save(THCA_Centricity_Top50,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/THCA_Centricity_Top50.RData")   #
+save(THCA_Centricity_Top50,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/THCA_Centricity_Top50.RData")   #
 #######################################################################################################################################################################################
 ######
 # 04 #
@@ -473,7 +473,7 @@ a3 <- names(sort(THCA_Centricity_neg[[3]],decreasing = TRUE)[c(1:20)])          
 # Find the intersection of the first 20 nodes of the three centralities in the descending network                                                                                      #
 THCA_Centricity_Top20[[1]] <- intersect(intersect(a1,a2),a3)                                                                                                                           #
 # Set the path to store VENN diagram                                                                                                                                                   #
-setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/02_VENN/THCA/")                                                                       #
+setwd("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/02_VENN/THCA/")                                                                       #
 # Draw the VENN graph of the intersection of the first 20 nodes of the three centralities in the descending network                                                                    #
 venn.plot <- venn.diagram(list("DC"=a1, 
                                "CC"=a2,
@@ -495,7 +495,7 @@ venn.plot <- venn.diagram(list("DC"=a1,
                           fill = rainbow(3),main = "THCA_Advance_Top20")                                                                                                               #
 # Name and store the list that stores the intersection                                                                                                                                 #
 names(THCA_Centricity_Top20) <- c("neg","pos")                                                                                                                                         #
-save(THCA_Centricity_Top20,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/THCA_Centricity_Top20.RData")   #
+save(THCA_Centricity_Top20,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/THCA_Centricity_Top20.RData")   #
 #######################################################################################################################################################################################
 
 

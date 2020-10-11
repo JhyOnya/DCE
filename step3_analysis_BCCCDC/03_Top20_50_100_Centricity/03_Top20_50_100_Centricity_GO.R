@@ -1,5 +1,5 @@
 # Set running path
-setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/step3_analysis_BCCCDC/03_Top20_50_100_Centricity/")
+setwd("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/step3_analysis_BCCCDC/03_Top20_50_100_Centricity/")
 ###################################################################################################################################################################################
 ###################################################################################################################################################################################
 ### 三、Here we perform a functional enrichment analysis on the first 20, 50, and 100 intersection nodes of the rising and falling in the largest connected subgraph taken out ####
@@ -12,8 +12,8 @@ setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/step3_analysis_BCCCDC/03_
 #########################################################
 # Import the required data                              #
 ############################################################################################################################################################
-Gene_List <- read.table("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_2to3/RData/gene_symbol_list.txt",sep = "\t",stringsAsFactors = FALSE)#
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_2to3/RData/all_pathway_canonica_GO_bp_unify.1.RData")                                   #
+Gene_List <- read.table("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_2to3/RData/gene_symbol_list.txt",sep = "\t",stringsAsFactors = FALSE)#
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_2to3/RData/all_pathway_canonica_GO_bp_unify.1.RData")                                   #
 ############################################################################################################################################################
 
 
@@ -57,9 +57,9 @@ Enrichment <- function(datafile){                                               
 # Here we perform enrichment analysis on the intersection of the first 20, 50, and 100 nodes of COAD #
 ########################################################################################################################################################################################
 # Import the data of the intersection of COAD Top 20, 50, and 100 nodes                                                                                                                #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/COAD_Centricity_Top20.RData")                                #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/COAD_Centricity_Top50.RData")                                #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/COAD_Centricity_Top100.RData")                               #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/COAD_Centricity_Top20.RData")                                #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/COAD_Centricity_Top50.RData")                                #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/COAD_Centricity_Top100.RData")                               #
 COAD_Centricity_Top20[[1]] <- na.omit(COAD_Centricity_Top20[[1]])                                                                                                                      #
 COAD_Centricity_Top20[[2]] <- na.omit(COAD_Centricity_Top20[[2]])                                                                                                                      #
 COAD_Centricity_Top50[[1]] <- na.omit(COAD_Centricity_Top50[[1]])                                                                                                                      #
@@ -111,9 +111,9 @@ names(COAD_Centricity_Top20_GO) <- names(COAD_Centricity_Top20)                 
 names(COAD_Centricity_Top50_GO) <- names(COAD_Centricity_Top50)                                                                                                                        #
 names(COAD_Centricity_Top100_GO) <- names(COAD_Centricity_Top100)                                                                                                                      #
 #                                                                                                                                                                                      #
-save(COAD_Centricity_Top20_GO,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/03_Enrichment/Top20/COAD_Centricity_Top20_GO.RData")   #
-save(COAD_Centricity_Top50_GO,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/03_Enrichment/Top50/COAD_Centricity_Top50_GO.RData")   #
-save(COAD_Centricity_Top100_GO,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/03_Enrichment/Top100/COAD_Centricity_Top100_GO.RData")#
+save(COAD_Centricity_Top20_GO,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/03_Enrichment/Top20/COAD_Centricity_Top20_GO.RData")   #
+save(COAD_Centricity_Top50_GO,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/03_Enrichment/Top50/COAD_Centricity_Top50_GO.RData")   #
+save(COAD_Centricity_Top100_GO,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/03_Enrichment/Top100/COAD_Centricity_Top100_GO.RData")#
 ########################################################################################################################################################################################
 ########################################################################################################################################################################################
 ########################################################################################################################################################################################
@@ -127,9 +127,9 @@ save(COAD_Centricity_Top100_GO,file = "/home/jhy/code/myCode/Python/other/DCE_BI
 # Here we perform enrichment analysis on the intersection of the first 20, 50, and 100 nodes of KIRC #
 ########################################################################################################################################################################################
 # Import the data of the intersection of KIRC Top20, 50, and 100 nodes                                                                                                                 #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/KIRC_Centricity_Top20.RData")                                #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/KIRC_Centricity_Top50.RData")                                #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/KIRC_Centricity_Top100.RData")                               #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/KIRC_Centricity_Top20.RData")                                #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/KIRC_Centricity_Top50.RData")                                #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/KIRC_Centricity_Top100.RData")                               #
 
 KIRC_Centricity_Top20[[1]] <- na.omit(KIRC_Centricity_Top20[[1]])                                                                                                                      #
 KIRC_Centricity_Top20[[2]] <- na.omit(KIRC_Centricity_Top20[[2]])                                                                                                                      #
@@ -182,9 +182,9 @@ names(KIRC_Centricity_Top20_GO) <- names(KIRC_Centricity_Top20)                 
 names(KIRC_Centricity_Top50_GO) <- names(KIRC_Centricity_Top50)                                                                                                                        #
 names(KIRC_Centricity_Top100_GO) <- names(KIRC_Centricity_Top100)                                                                                                                      #
 #
-save(KIRC_Centricity_Top20_GO,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/03_Enrichment/Top20/KIRC_Centricity_Top20_GO.RData")   #
-save(KIRC_Centricity_Top50_GO,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/03_Enrichment/Top50/KIRC_Centricity_Top50_GO.RData")   #
-save(KIRC_Centricity_Top100_GO,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/03_Enrichment/Top100/KIRC_Centricity_Top100_GO.RData")#
+save(KIRC_Centricity_Top20_GO,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/03_Enrichment/Top20/KIRC_Centricity_Top20_GO.RData")   #
+save(KIRC_Centricity_Top50_GO,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/03_Enrichment/Top50/KIRC_Centricity_Top50_GO.RData")   #
+save(KIRC_Centricity_Top100_GO,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/03_Enrichment/Top100/KIRC_Centricity_Top100_GO.RData")#
 ########################################################################################################################################################################################
 ########################################################################################################################################################################################
 ########################################################################################################################################################################################
@@ -199,9 +199,9 @@ save(KIRC_Centricity_Top100_GO,file = "/home/jhy/code/myCode/Python/other/DCE_BI
 # 这里我们对 LUAD 的前20、50、100节点的交集进行富集分析 #
 ########################################################################################################################################################################################
 # Import the data of the intersection of LUAD Top20, 50, and 100 nodes                                                                                                                 #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/LUAD_Centricity_Top20.RData")                                #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/LUAD_Centricity_Top50.RData")                                #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/LUAD_Centricity_Top100.RData")                               #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/LUAD_Centricity_Top20.RData")                                #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/LUAD_Centricity_Top50.RData")                                #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/LUAD_Centricity_Top100.RData")                               #
 #
 LUAD_Centricity_Top20[[1]] <- na.omit(LUAD_Centricity_Top20[[1]])                                                                                                                      #
 LUAD_Centricity_Top20[[2]] <- na.omit(LUAD_Centricity_Top20[[2]])                                                                                                                      #
@@ -254,9 +254,9 @@ names(LUAD_Centricity_Top20_GO) <- names(LUAD_Centricity_Top20)                 
 names(LUAD_Centricity_Top50_GO) <- names(LUAD_Centricity_Top50)                                                                                                                        #
 names(LUAD_Centricity_Top100_GO) <- names(LUAD_Centricity_Top100)                                                                                                                      #
 #
-save(LUAD_Centricity_Top20_GO,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/03_Enrichment/Top20/LUAD_Centricity_Top20_GO.RData")   #
-save(LUAD_Centricity_Top50_GO,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/03_Enrichment/Top50/LUAD_Centricity_Top50_GO.RData")   #
-save(LUAD_Centricity_Top100_GO,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/03_Enrichment/Top100/LUAD_Centricity_Top100_GO.RData")#
+save(LUAD_Centricity_Top20_GO,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/03_Enrichment/Top20/LUAD_Centricity_Top20_GO.RData")   #
+save(LUAD_Centricity_Top50_GO,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/03_Enrichment/Top50/LUAD_Centricity_Top50_GO.RData")   #
+save(LUAD_Centricity_Top100_GO,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/03_Enrichment/Top100/LUAD_Centricity_Top100_GO.RData")#
 ########################################################################################################################################################################################
 ########################################################################################################################################################################################
 ########################################################################################################################################################################################
@@ -271,9 +271,9 @@ save(LUAD_Centricity_Top100_GO,file = "/home/jhy/code/myCode/Python/other/DCE_BI
 # Here we perform enrichment analysis on the intersection of the first 20, 50, and 100 nodes of THCA #
 ########################################################################################################################################################################################
 # Import the data of the intersection of THCA Top20, 50, and 100 nodes                                                                                                                  #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/THCA_Centricity_Top20.RData")                                #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/THCA_Centricity_Top50.RData")                                #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/THCA_Centricity_Top100.RData")                               #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/THCA_Centricity_Top20.RData")                                #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/THCA_Centricity_Top50.RData")                                #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/01_Top20_50_100_intersect/THCA_Centricity_Top100.RData")                               #
 #
 THCA_Centricity_Top20[[1]] <- na.omit(THCA_Centricity_Top20[[1]])                                                                                                                      #
 THCA_Centricity_Top20[[2]] <- na.omit(THCA_Centricity_Top20[[2]])                                                                                                                      #
@@ -326,9 +326,9 @@ names(THCA_Centricity_Top20_GO) <- names(THCA_Centricity_Top20)                 
 names(THCA_Centricity_Top50_GO) <- names(THCA_Centricity_Top50)                                                                                                                        #
 names(THCA_Centricity_Top100_GO) <- names(THCA_Centricity_Top100)                                                                                                                      #
 #
-save(THCA_Centricity_Top20_GO,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/03_Enrichment/Top20/THCA_Centricity_Top20_GO.RData")   #
-save(THCA_Centricity_Top50_GO,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/03_Enrichment/Top50/THCA_Centricity_Top50_GO.RData")   #
-save(THCA_Centricity_Top100_GO,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/03_Enrichment/Top100/THCA_Centricity_Top100_GO.RData")#
+save(THCA_Centricity_Top20_GO,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/03_Enrichment/Top20/THCA_Centricity_Top20_GO.RData")   #
+save(THCA_Centricity_Top50_GO,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/03_Enrichment/Top50/THCA_Centricity_Top50_GO.RData")   #
+save(THCA_Centricity_Top100_GO,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/03_Top20_50_100_Centricity/03_Enrichment/Top100/THCA_Centricity_Top100_GO.RData")#
 ########################################################################################################################################################################################
 ########################################################################################################################################################################################
 ########################################################################################################################################################################################

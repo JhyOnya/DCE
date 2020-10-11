@@ -48,7 +48,6 @@ def draw_boxplot(name, f_list, data_path_model, data_path_p_model, out_path_pic_
 
     printT("save ", name)
     plt.savefig(out_path_pic_model % name)
-    plt.savefig(out_path_pdf_model % name)
     printT("finish ", name, f)
 
 

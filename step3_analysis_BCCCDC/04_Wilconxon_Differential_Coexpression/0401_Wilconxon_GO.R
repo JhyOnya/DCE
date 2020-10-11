@@ -1,5 +1,5 @@
 # 设置运行路径
-setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/step3_analysis_BCCCDC/04_Wilconxon_Differential_Coexpression/")
+setwd("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/step3_analysis_BCCCDC/04_Wilconxon_Differential_Coexpression/")
 ####################################################################################################
 ####################################################################################################
 ###################### 四、这里我们对差异表达的基因进行富集分析 ####################################
@@ -46,9 +46,9 @@ Enrichment <- function(datafile){                                               
 # 首先我们载入以下富集分析所必须的数据：                   #
 ########################################################################################################################################################################
 #
-Gene_List <- read.table("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_2to3/RData/gene_symbol_list.txt",sep = "\t",stringsAsFactors = FALSE)            #
+Gene_List <- read.table("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_2to3/RData/gene_symbol_list.txt",sep = "\t",stringsAsFactors = FALSE)            #
 #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_2to3/RData/all_pathway_canonica_GO_bp_unify.1.RData")                                               #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_2to3/RData/all_pathway_canonica_GO_bp_unify.1.RData")                                               #
 ########################################################################################################################################################################
 
 
@@ -58,7 +58,7 @@ load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_2to3/RData/al
 # COAD #
 #############################################################################################################################################################################
 # 导入 COAD 差异表达基因的数据                                                                                                                                              #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_2to3/RData/COAD_wilconxon.RData")                                                                        #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_2to3/RData/COAD_wilconxon.RData")                                                                        #
 # 创建存放COAD富集分析的结果的列表                                                                                                                                          #
 COAD_wilconxon_GO <- list()                                                                                                                                                 #
 # 对上升和下降的网络中的差异表达的基因进行富集分析                                                                                                                          #
@@ -77,7 +77,7 @@ for (i in 1:2) {                                                                
   COAD_wilconxon_GO[[i]] <- Enrichment(Gene_List)                                                                                                                           #
 }                                                                                                                                                                           #
 names(COAD_wilconxon_GO) <- names(COAD_wilconxon)                                                                                                                           #
-save(COAD_wilconxon_GO,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/Enrichment/COAD_wilconxon_GO.RData")   #
+save(COAD_wilconxon_GO,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/Enrichment/COAD_wilconxon_GO.RData")   #
 #############################################################################################################################################################################
 
 
@@ -87,7 +87,7 @@ save(COAD_wilconxon_GO,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/c
 ########
 # KIRC #
 #############################################################################################################################################################################
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_2to3/RData/KIRC_wilconxon.RData")                                                                        #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_2to3/RData/KIRC_wilconxon.RData")                                                                        #
 #                                                                                                                                                                           #
 KIRC_wilconxon_GO <- list()                                                                                                                                                 #
 for (i in 1:2) {                                                                                                                                                            #
@@ -105,7 +105,7 @@ for (i in 1:2) {                                                                
   KIRC_wilconxon_GO[[i]] <- Enrichment(Gene_List)                                                                                                                           #
 }                                                                                                                                                                           #
 names(KIRC_wilconxon_GO) <- names(KIRC_wilconxon)                                                                                                                           #
-save(KIRC_wilconxon_GO,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/Enrichment/KIRC_wilconxon_GO.RData")   #
+save(KIRC_wilconxon_GO,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/Enrichment/KIRC_wilconxon_GO.RData")   #
 #############################################################################################################################################################################
 
 
@@ -116,7 +116,7 @@ save(KIRC_wilconxon_GO,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/c
 ########
 # LUAD #
 #############################################################################################################################################################################
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_2to3/RData/LUAD_wilconxon.RData")                                                                        #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_2to3/RData/LUAD_wilconxon.RData")                                                                        #
 #                                                                                                                                                                           #
 LUAD_wilconxon_GO <- list()                                                                                                                                                 #
 for (i in 1:2) {                                                                                                                                                            #
@@ -134,7 +134,7 @@ for (i in 1:2) {                                                                
   LUAD_wilconxon_GO[[i]] <- Enrichment(Gene_List)                                                                                                                           #
 }                                                                                                                                                                           #
 names(LUAD_wilconxon_GO) <- names(LUAD_wilconxon)                                                                                                                           #
-save(LUAD_wilconxon_GO,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/Enrichment/LUAD_wilconxon_GO.RData")   #
+save(LUAD_wilconxon_GO,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/Enrichment/LUAD_wilconxon_GO.RData")   #
 #############################################################################################################################################################################
 
 
@@ -143,7 +143,7 @@ save(LUAD_wilconxon_GO,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/c
 ########
 # THCA #
 #############################################################################################################################################################################
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_2to3/RData/THCA_wilconxon.RData")                                                                        #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_2to3/RData/THCA_wilconxon.RData")                                                                        #
 #                                                                                                                                                                           #
 THCA_wilconxon_GO <- list()                                                                                                                                                 #
 for (i in 1:2) {                                                                                                                                                            #
@@ -161,7 +161,7 @@ for (i in 1:2) {                                                                
   THCA_wilconxon_GO[[i]] <- Enrichment(Gene_List)                                                                                                                           #
 }                                                                                                                                                                           #
 names(THCA_wilconxon_GO) <- names(THCA_wilconxon)                                                                                                                           #
-save(THCA_wilconxon_GO,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/Enrichment/THCA_wilconxon_GO.RData")   #
+save(THCA_wilconxon_GO,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/04_Wilconxon_Differential_Coexpression/Enrichment/THCA_wilconxon_GO.RData")   #
 #############################################################################################################################################################################
 
 

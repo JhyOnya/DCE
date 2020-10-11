@@ -1,5 +1,5 @@
 # Set running path
-setwd("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/step3_analysis_BCCCDC/02_Calculate_Centricity/")
+setwd("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/step3_analysis_BCCCDC/02_Calculate_Centricity/")
 ###############################################################################################################################################################
 ###################### 二、Calculate the centrality of each node in the largest connected subgraph in the rising and falling network ##########################
 ###############################################################################################################################################################
@@ -48,8 +48,8 @@ init.igraph<-function(data,dir=F,rem.multi=T)                                   
 # Import the largest connected subgraph network；#
 # The data form is two columns of nodes；        #
 ##################################################################################################################
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_2to3/RData/nonboth_subgraph_edges_neg.RData") #
-load("/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_2to3/RData/nonboth_subgraph_edges_pos.RData") #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_2to3/RData/nonboth_subgraph_edges_neg.RData") #
+load("/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_2to3/RData/nonboth_subgraph_edges_pos.RData") #
 ##################################################################################################################
 
 
@@ -79,9 +79,9 @@ THCA_Centricity_pos <- list()                                                   
 ###########################################################################################
 for (i in 1:4) {                                                                          #
   ll <- list()                                                                            #
-  dat <- nonboth_subgraph_edges_neg[[i]][,c(2,3)]                                         #
-  c_name1 <- c(unique(nonboth_subgraph_edges_neg[[i]][,2]))                               #
-  c_name2 <- c(unique(nonboth_subgraph_edges_neg[[i]][,3]))                               #
+  dat <- nonboth_subgraph_edges_neg[[i]][,c(1,2)]                                         #
+  c_name1 <- c(unique(nonboth_subgraph_edges_neg[[i]][,1]))                               #
+  c_name2 <- c(unique(nonboth_subgraph_edges_neg[[i]][,2]))                               #
   a <- c_name2 %in% c_name1                                                               #
   c_name2 <- c_name2[-c(which(a == TRUE))]                                                #
   c_name <- c(c_name1,c_name2)                                                            #
@@ -134,9 +134,9 @@ for (i in 1:4) {                                                                
 ###########################################################################################
 for (i in 1:4) {                                                                          #
   ll <- list()                                                                            #
-  dat <- nonboth_subgraph_edges_pos[[i]][,c(2,3)]                                         #
-  c_name1 <- c(unique(nonboth_subgraph_edges_pos[[i]][,2]))                               #
-  c_name2 <- c(unique(nonboth_subgraph_edges_pos[[i]][,3]))                               #
+  dat <- nonboth_subgraph_edges_pos[[i]][,c(1,2)]                                         #
+  c_name1 <- c(unique(nonboth_subgraph_edges_pos[[i]][,1]))                               #
+  c_name2 <- c(unique(nonboth_subgraph_edges_pos[[i]][,2]))                               #
   a <- c_name2 %in% c_name1                                                               #
   c_name2 <- c_name2[-c(which(a == TRUE))]                                                #
   c_name <- c(c_name1,c_name2)                                                            #
@@ -185,14 +185,14 @@ for (i in 1:4) {                                                                
 #################################
 # Store the obtained centrality #
 ####################################################################################################################################################
-save(COAD_Centricity_neg,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/COAD_Centricity_neg.RData")#
-save(KIRC_Centricity_neg,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/KIRC_Centricity_neg.RData")#
-save(LUAD_Centricity_neg,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/LUAD_Centricity_neg.RData")#
-save(THCA_Centricity_neg,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/THCA_Centricity_neg.RData")#
-save(COAD_Centricity_pos,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/COAD_Centricity_pos.RData")#
-save(KIRC_Centricity_pos,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/KIRC_Centricity_pos.RData")#
-save(LUAD_Centricity_pos,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/LUAD_Centricity_pos.RData")#
-save(THCA_Centricity_pos,file = "/home/jhy/code/myCode/Python/other/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/THCA_Centricity_pos.RData")#
+save(COAD_Centricity_neg,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/COAD_Centricity_neg.RData")#
+save(KIRC_Centricity_neg,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/KIRC_Centricity_neg.RData")#
+save(LUAD_Centricity_neg,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/LUAD_Centricity_neg.RData")#
+save(THCA_Centricity_neg,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/THCA_Centricity_neg.RData")#
+save(COAD_Centricity_pos,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/COAD_Centricity_pos.RData")#
+save(KIRC_Centricity_pos,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/KIRC_Centricity_pos.RData")#
+save(LUAD_Centricity_pos,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/LUAD_Centricity_pos.RData")#
+save(THCA_Centricity_pos,file = "/home/jhy/code/myCode/Python/history/DCE_BIBM2020/cache/result_3/02_Calculate_Centricity/THCA_Centricity_pos.RData")#
 ####################################################################################################################################################
 
 
