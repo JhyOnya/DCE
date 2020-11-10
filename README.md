@@ -1,3 +1,18 @@
+# Cite
+
+If you make use of this code in your own work, please cite our paper:
+
+```
+@inproceedings{SCP,
+  title={Identification of Cancer Development Related Pathways Based on Co-Expression Analyses},
+  author={Hongyang Jiang, Zhihang Wang, Chaoyi Yin, Peishuo Sun, Ying Xu, and Huiyan Sun},
+  booktitle={2020 IEEE International Conference on Bioinformatics and Biomedicine},
+  year={2020}
+}
+```
+
+
+
 # step1
 	# the code is written by python, version=3.6.9
 	# calculate co-expression by Spearman
