@@ -3,7 +3,7 @@
 If you make use of this code in your own work, please cite our paper:
 
 ```
-@inproceedings{SCP,
+@inproceedings{DCE,
   title={Identification of Cancer Development Related Pathways Based on Co-Expression Analyses},
   author={Hongyang Jiang, Zhihang Wang, Chaoyi Yin, Peishuo Sun, Ying Xu, and Huiyan Sun},
   booktitle={2020 IEEE International Conference on Bioinformatics and Biomedicine},
